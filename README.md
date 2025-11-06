@@ -16,21 +16,8 @@ Deploying the web application using Kubernetes manifests (Deployment and Service
 
 Exposing the application via an AWS LoadBalancer to make it accessible to the public.
 
-```mermaid
-graph TD
-  Browser -->|HTTP| ELB[Elastic Load Balancer]
-  ELB --> Pod1[Apache Pod 1]
-  ELB --> Pod2[Apache Pod 2]
-  subgraph EKS["Amazon EKS Cluster"]
-    Pod1 -->|serves HTML| Index1[index.html]
-    Pod2 -->|serves HTML| Index2[index.html]
-  end
-  subgraph DockerHub["Docker Hub"]
-    Image[anslem2025/kubernetes-apache-webapp:latest] -->|pulled| Pod1
-    Image -->|pulled| Pod2
-  end
-  EKS --> AWSInfra[VPC/Subnets/SecurityGroups]
-```
+<img width="1473" height="571" alt="Screenshot (752)" src="https://github.com/user-attachments/assets/93c49bff-1f22-4373-80bc-9df4d9d0a338" />
+
 🧰 Tools Used
 
 AWS CLI – for AWS configuration and authentication
